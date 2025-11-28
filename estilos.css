@@ -1,119 +1,434 @@
-#cont{
-      width: 50%;
-      height: 100%;
-      background-color: rgb(95, 67, 6);
-      float: left;
-}
-#cont2{
-      width: 50%;
-      height: 100%;
-      background-color: rgb(117, 83, 11);
-      float: left;
-}
-#cont3{
-      width: 100%;
-      height: 20%;
-      background-color: rgb(132, 110, 68);
-      float: left;
-}
-#cont4{
-      width: 50%;
-      height: 100%;
-      background-color: rgba(132, 110, 68, 0.412);
-      float: left;
-}
-/*Jerarquía, primero ID,clase y objeto, pero el incrustado dentro de la tag es más importante*/
-.color{
-      color: yellow;
-}
- p.ch{
-      border: 2px solid olive;
-      position: relative; /*trabaja desde el lugar odnde fue creado*/
-      right: 10px;
- }
-
-#carrusel{
-      width: 90%;
-      height: 26%;
-      background-color: rgb(110, 9, 137);
-      position: relative;
-      margin: auto;
-      
-}
-#carrusel2{
-      width: 30%;
-      height: 35%;
-      background-color: rgb(110, 9, 137);
-      position: relative;
-      margin: auto;
-      
+/* =================================
+   ESTILOS GENERALES
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.lista img {
-      width: 200px;      
-      height: 200px;
-      position: bottom;   
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
-.lista2 img {
-      width: 210px;      
-      height: 210px;
-      position: relative;   
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #d35400;
+  font-weight: bold;
 }
 
-.lista img:hover{
-      transform: scale(1.1);
-      cursor: pointer;
-      filter: brightness(150%);
+/* =================================
+   NAVEGACIÓN
+================================= */
+.top-bar {
+  background-color: #2c3e50;
+  padding: 15px 0;
 }
 
-.lista2 img:hover{
-      transform: scale(1.1);
-      cursor: pointer;
-      filter: brightness(150%)
-}
-img{
-      width: 350px;      
-      height: 550px;
-      float: left;
-}
-h1{
-      text-align: center;
-
-}
-button{
-      padding:8px 15px;
-      text-align: center;
-      background-color: beige;
-      display: block;
-      margin: auto;
-      margin-top: -20px;
-      
+.top-bar .menu-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6b35;
 }
 
-#pic{
-      max-width: 90%;      
-      max-height: 70%;       
-      display: block;
-      margin: 20px auto;    
-      float: none;          
-      object-fit: contain;  
+.top-bar a {
+  color: #ecf0f1;
+  font-weight: 500;
+  transition: color 0.3s;
 }
-.label-detalle1{
-      font-size: 28px;
-      color: white;
-      text-align: center;
-      margin-top: 15px;
-      display: block;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px black;
+
+.top-bar a:hover {
+  color: #ff6b35;
 }
-.label-detalle2{
-      font-size: 28px;
-      color: white;
-      text-align: center;
-      margin-top: -10px ;
-      display: block;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px black;
+
+/* =================================
+   HERO SECTION
+================================= */
+.hero-section {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600') center/cover;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.hero-section .button {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* =================================
+   CARACTERÍSTICAS
+================================= */
+.features-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.feature-card {
+  padding: 40px 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  color: #d35400;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* =================================
+   MENÚ SECTION
+================================= */
+.menu-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.menu-card {
+  background-color: #fff;
+  border: 2px solid #e8e8e8;
+  padding: 30px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.menu-category {
+  color: #d35400;
+  border-bottom: 3px solid #ff6b35;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.menu-item {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-header h4 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.price {
+  color: #d35400;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.menu-item p {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+/* =================================
+   ESPECIALIDADES
+================================= */
+.specialties-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ff6b35 0%, #d35400 100%);
+  color: white;
+}
+
+.specialties-section .section-title {
+  color: white;
+}
+
+.specialty-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.specialty-image {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.specialty-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* =================================
+   NOSOTROS
+================================= */
+.about-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.about-section h2 {
+  color: #d35400;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-section .lead {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.about-list {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.about-list li {
+  padding: 10px 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* =================================
+   RESERVAS
+================================= */
+.reservation-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.reservation-info {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.reservation-info h3 {
+  color: #d35400;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.reservation-info p,
+.reservation-info li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.reservation-info ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.reservation-form {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.reservation-form label {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 12px;
+  transition: border-color 0.3s;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+  border-color: #ff6b35;
+  outline: none;
+}
+
+/* =================================
+   FOOTER
+================================= */
+.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 50px 0 20px 0;
+}
+
+.footer h4 {
+  color: #ff6b35;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.footer p {
+  color: #bdc3c7;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #bdc3c7;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff6b35;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-icon {
+  color: #bdc3c7;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #ff6b35;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #34495e;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #95a5a6;
+  margin: 0;
+}
+
+/* =================================
+   BOTONES PERSONALIZADOS
+================================= */
+.button.warning {
+  background-color: #ff6b35;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.button.warning:hover {
+  background-color: #d35400;
+}
+
+.button.hollow {
+  border: 2px solid white;
+  color: white;
+  transition: all 0.3s;
+}
+
+.button.hollow:hover {
+  background-color: white;
+  color: #ff6b35;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+@media screen and (max-width: 640px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-section .button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
 }
