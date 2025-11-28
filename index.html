@@ -7,346 +7,226 @@
   
   <!-- Foundation CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation-float.min.css">
-  
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="estilos.css">
+
+
+  <!-- Motion UI (animaciones nativas de Foundation) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/2.0.3/motion-ui.min.css">
+
+  <!-- CSS PERSONALIZADO -->
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle="main-menu"></button>
-    <div class="title-bar-title">Menú</div>
-  </div>
-
+  <!-- NAVBAR -->
+  <div class="top-bar-container">
+  <div class="title-bar" ...></div>
   <div class="top-bar" id="main-menu">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">🍴 El Buen Sabor</li>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#menu">Menú</a></li>
-        <li><a href="#especialidades">Especialidades</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#reservas">Reservas</a></li>
-      </ul>
+
+      
+    </div>
+
+    <div class="top-bar" id="main-menu">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text logo-text">🍴 El Buen Sabor</li>
+
+          <li><a href="#inicio">Inicio</a></li>
+
+          <li>
+            <a href="#menu">Menú</a>
+            <ul class="menu vertical nested">
+              <li><a href="#">Entradas</a></li>
+              <li><a href="#">Platos fuertes</a></li>
+              <li><a href="#">Postres</a></li>
+              <li><a href="#">Bebidas</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#reservas">Reservas</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section class="hero-section" id="inicio">
     <div class="hero-overlay"></div>
     <div class="grid-container hero-content">
       <h1 class="hero-title">Restaurante El Buen Sabor</h1>
       <p class="hero-subtitle">Donde cada plato cuenta una historia</p>
-      <button class="button large warning">Ver Nuestro Menú</button>
-      <button class="button large hollow">Hacer Reserva</button>
+      <div class="botones-hero">
+  <a href="#menu" class="button warning">Ver Menú</a>
+  <a href="#reservas" class="button hollow">Hacer Reserva</a>
+</div>
+
     </div>
   </section>
 
-  <!-- Características -->
+  <!-- CARACTERÍSTICAS -->
   <section class="features-section">
     <div class="grid-container">
+      <h2 class="section-title">¿Por qué elegirnos?</h2>
+
       <div class="grid-x grid-margin-x text-center">
         <div class="cell medium-4">
           <div class="feature-card">
             <div class="feature-icon">👨‍🍳</div>
             <h3>Chefs Expertos</h3>
-            <p>Contamos con chefs de trayectoria internacional</p>
+            <p>Profesionales con trayectoria internacional.</p>
           </div>
         </div>
-        
+
         <div class="cell medium-4">
           <div class="feature-card">
             <div class="feature-icon">🥗</div>
             <h3>Ingredientes Frescos</h3>
-            <p>Solo utilizamos productos locales y de temporada</p>
+            <p>Productos locales y de temporada.</p>
           </div>
         </div>
-        
+
         <div class="cell medium-4">
           <div class="feature-card">
             <div class="feature-icon">⭐</div>
-            <h3>Experiencia Única</h3>
-            <p>Ambiente acogedor y servicio de primera clase</p>
+            <h3>Ambiente Único</h3>
+            <p>Un espacio cálido y servicio de calidad.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Menú Section -->
-  <section id="menu" class="menu-section">
+  <!-- MENÚ -->
+  <section class="menu-section" id="menu">
     <div class="grid-container">
       <h2 class="section-title">Nuestro Menú</h2>
-      
+
       <div class="grid-x grid-margin-x">
         <div class="cell medium-6">
-          <div class="menu-card callout">
+          <div class="callout menu-card">
             <h3 class="menu-category">Entradas</h3>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Ensalada César</h4>
-                <span class="price">$8.50</span>
-              </div>
-              <p>Lechuga romana, crutones, parmesano y aderezo especial</p>
-            </div>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Bruschetta Italiana</h4>
-                <span class="price">$7.00</span>
-              </div>
-              <p>Pan tostado con tomate fresco, albahaca y aceite de oliva</p>
-            </div>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Ceviche de Camarón</h4>
-                <span class="price">$12.00</span>
-              </div>
-              <p>Camarones frescos marinados en limón con cebolla y cilantro</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="cell medium-6">
-          <div class="menu-card callout">
-            <h3 class="menu-category">Platos Principales</h3>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Lomo a la Parrilla</h4>
-                <span class="price">$18.50</span>
-              </div>
-              <p>Lomo fino con papas gratinadas y vegetales asados</p>
-            </div>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Pasta Alfredo</h4>
-                <span class="price">$14.00</span>
-              </div>
-              <p>Fettuccine en salsa de crema con pollo y champiñones</p>
-            </div>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Salmón al Horno</h4>
-                <span class="price">$16.50</span>
-              </div>
-              <p>Salmón fresco con vegetales y arroz aromático</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-x grid-margin-x">
-        <div class="cell medium-6">
-          <div class="menu-card callout">
-            <h3 class="menu-category">Postres</h3>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Tiramisú</h4>
-                <span class="price">$6.00</span>
-              </div>
-              <p>Clásico postre italiano con café y mascarpone</p>
-            </div>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Cheesecake de Frutos Rojos</h4>
-                <span class="price">$6.50</span>
-              </div>
-              <p>Cremoso cheesecake con salsa de frutos del bosque</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="cell medium-6">
-          <div class="menu-card callout">
-            <h3 class="menu-category">Bebidas</h3>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Limonada Natural</h4>
-                <span class="price">$3.50</span>
-              </div>
-              <p>Refrescante limonada hecha al momento</p>
-            </div>
-            <div class="menu-item">
-              <div class="item-header">
-                <h4>Vino de la Casa</h4>
-                <span class="price">$8.00</span>
-              </div>
-              <p>Selección de vinos tintos y blancos</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Especialidades -->
-  <section id="especialidades" class="specialties-section">
-    <div class="grid-container">
-      <h2 class="section-title">Especialidades del Chef</h2>
-      
-      <div class="grid-x grid-margin-x">
-        <div class="cell medium-4">
-          <div class="specialty-card">
-            <div class="specialty-image">🍝</div>
-            <h4>Pasta Casera</h4>
-            <p>Elaborada diariamente por nuestro chef</p>
-          </div>
-        </div>
-        
-        <div class="cell medium-4">
-          <div class="specialty-card">
-            <div class="specialty-image">🥩</div>
-            <h4>Carnes Premium</h4>
-            <p>Selección de cortes de la más alta calidad</p>
-          </div>
-        </div>
-        
-        <div class="cell medium-4">
-          <div class="specialty-card">
-            <div class="specialty-image">🍰</div>
-            <h4>Repostería Artesanal</h4>
-            <p>Postres únicos hechos en casa</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="nosotros" class="about-section">
-    <div class="grid-container">
-      <div class="grid-x grid-margin-x align-middle">
-        <div class="cell medium-6">
-          <div class="about-image">
-            <img src="https://via.placeholder.com/600x400/ff6b35/ffffff?text=Nuestro+Restaurante" alt="Nuestro restaurante">
-          </div>
-        </div>
-        <div class="cell medium-6">
-          <h2>Nuestra Historia</h2>
-          <p class="lead">Desde 1995, compartiendo sabores auténticos</p>
-          <p>El Buen Sabor nació del sueño de crear un espacio donde la comida tradicional se encuentre con técnicas culinarias modernas. Nuestro compromiso es ofrecer una experiencia gastronómica memorable en cada visita.</p>
-          <ul class="about-list">
-            <li>✓ Más de 25 años de experiencia</li>
-            <li>✓ Recetas familiares auténticas</li>
-            <li>✓ Ambiente cálido y acogedor</li>
-            <li>✓ Servicio personalizado</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reservas Section -->
-  <section id="reservas" class="reservation-section">
-    <div class="grid-container">
-      <h2 class="section-title">Haz tu Reserva</h2>
-      
-      <div class="grid-x grid-margin-x">
-        <div class="cell medium-6">
-          <div class="reservation-info">
-            <h3>Información de Contacto</h3>
-            <p><strong>📍 Dirección:</strong> Av. Principal 123, Ciudad</p>
-            <p><strong>📞 Teléfono:</strong> +593 99 123 4567</p>
-            <p><strong>📧 Email:</strong> reservas@elbuensabor.com</p>
-            <p><strong>🕐 Horario:</strong></p>
-            <ul>
-              <li>Lunes - Viernes: 12:00 - 23:00</li>
-              <li>Sábados - Domingos: 11:00 - 00:00</li>
+            <ul class="menu-list">
+              <li><span>Ensalada César</span><span>$8.50</span></li>
+              <li><span>Bruschetta Italiana</span><span>$7.00</span></li>
+              <li><span>Ceviche de Camarón</span><span>$12.00</span></li>
             </ul>
           </div>
         </div>
+
+        <div class="cell medium-6">
+          <div class="callout menu-card">
+            <h3 class="menu-category">Platos Principales</h3>
+            <ul class="menu-list">
+              <li><span>Lomo a la Parrilla</span><span>$18.50</span></li>
+              <li><span>Pasta Alfredo</span><span>$14.00</span></li>
+              <li><span>Salmón al Horno</span><span>$16.50</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ESPECIALIDADES -->
+  <section class="specialties-section" id="especialidades">
+    <div class="grid-container">
+      <h2 class="section-title white-title">Especialidades</h2>
+
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-4">
+          <div class="specialty-card">
+            <div class="specialty-icon">🍝</div>
+            <h4>Pasta Casera</h4>
+            <p>Hecha fresca todos los días.</p>
+          </div>
+        </div>
+
+        <div class="cell medium-4">
+          <div class="specialty-card">
+            <div class="specialty-icon">🥩</div>
+            <h4>Cortes Premium</h4>
+            <p>Calidad garantizada.</p>
+          </div>
+        </div>
+
+        <div class="cell medium-4">
+          <div class="specialty-card">
+            <div class="specialty-icon">🍰</div>
+            <h4>Repostería</h4>
+            <p>Postres artesanales.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="about-section" id="nosotros">
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x align-middle">
         
         <div class="cell medium-6">
-          <form class="reservation-form">
-            <label>
-              Nombre Completo
-              <input type="text" placeholder="Tu nombre" required>
-            </label>
-            
-            <label>
-              Teléfono
-              <input type="tel" placeholder="+593 99 123 4567" required>
-            </label>
-            
-            <label>
-              Email
-              <input type="email" placeholder="tu@email.com" required>
-            </label>
-            
-            <div class="grid-x grid-margin-x">
-              <div class="cell medium-6">
-                <label>
-                  Fecha
-                  <input type="date" required>
-                </label>
-              </div>
-              <div class="cell medium-6">
-                <label>
-                  Hora
-                  <input type="time" required>
-                </label>
-              </div>
-            </div>
-            
-            <label>
-              Número de Personas
-              <select required>
-                <option value="">Seleccione...</option>
-                <option value="1">1 persona</option>
-                <option value="2">2 personas</option>
-                <option value="3">3 personas</option>
-                <option value="4">4 personas</option>
-                <option value="5">5 personas</option>
-                <option value="6+">6 o más personas</option>
-              </select>
-            </label>
-            
-            <label>
-              Comentarios Adicionales
-              <textarea placeholder="Alergias, preferencias, etc." rows="3"></textarea>
-            </label>
-            
-            <button type="submit" class="button expanded warning">Confirmar Reserva</button>
-          </form>
+          <img src="https://img.freepik.com/premium-photo/argentine-parrilla-with-grilled-meats-chimichurri-sauce_818261-30036.jpg" class="about-img">
         </div>
+
+        <div class="cell medium-6">
+          <h2 class="section-title">Nuestra Historia</h2>
+          <p class="lead">
+            Desde 1995, ofreciendo experiencias inolvidables.
+          </p>
+          <p>
+            Comida tradicional con un toque moderno, en un ambiente cálido y familiar.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!-- RESERVAS -->
+  <section class="reservation-section" id="reservas">
     <div class="grid-container">
+      <h2 class="section-title">Haz tu Reserva</h2>
+
       <div class="grid-x grid-margin-x">
-        <div class="cell medium-4">
-          <h4>El Buen Sabor</h4>
-          <p>Donde cada plato cuenta una historia desde 1995</p>
-        </div>
-        <div class="cell medium-4">
-          <h4>Enlaces Rápidos</h4>
-          <ul class="footer-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#menu">Menú</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#reservas">Reservas</a></li>
-          </ul>
-        </div>
-        <div class="cell medium-4">
-          <h4>Síguenos</h4>
-          <div class="social-links">
-            <a href="#" class="social-icon">Facebook</a>
-            <a href="#" class="social-icon">Instagram</a>
-            <a href="#" class="social-icon">Twitter</a>
+
+        <div class="cell medium-6">
+          <div class="callout reservation-info">
+            <h3>Contacto</h3>
+            <p><strong>📍 Dirección:</strong> Av. Principal 123</p>
+            <p><strong>📞 Teléfono:</strong> +593 99 123 4567</p>
+            <p><strong>📧 Email:</strong> reservas@elbuensabor.com</p>
           </div>
         </div>
+
+        <div class="cell medium-6">
+          <form class="reservation-form callout">
+            <label>Nombre <input type="text"></label>
+            <label>Teléfono <input type="text"></label>
+            <label>Email <input type="email"></label>
+            <label>Fecha <input type="date"></label>
+            <label>Hora <input type="time"></label>
+            <label>Número de Personas <input type="number"></label>
+            <button class="button warning expanded">Reservar</button>
+          </form>
+        </div>
+
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Restaurante El Buen Sabor. Todos los derechos reservados.</p>
-      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="grid-container text-center">
+      <p>© 2025 El Buen Sabor - Todos los derechos reservados</p>
     </div>
   </footer>
 
-  <!-- Foundation JS -->
+  <!-- JS Foundation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
   <script>
