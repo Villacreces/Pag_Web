@@ -1,6 +1,6 @@
-/* =================================
-   ESTILOS GENERALES
-================================= */
+/* ============================================
+   RESETEO GENERAL
+============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -11,424 +11,326 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #333;
   line-height: 1.6;
+  background-color: #fafafa;
 }
 
+/* TITULOS GENERALES */
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+  font-size: 2.7rem;
+  margin-bottom: 45px;
   color: #d35400;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
 }
 
-/* =================================
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background-color: #ff6b35;
+  display: block;
+  margin: 15px auto 0 auto;
+  border-radius: 5px;
+}
+
+.white-title::after {
+  background-color: white;
+}
+
+/* ============================================
    NAVEGACIÓN
-================================= */
-.top-bar {
-  background-color: #2c3e50;
-  padding: 15px 0;
+============================================ */
+.top-bar-container {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #2c3e50;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.top-bar .menu-text {
-  font-size: 1.5rem;
+.top-bar {
+  background: transparent;
+}
+
+.menu-text.logo-text {
+  font-size: 1.6rem;
   font-weight: bold;
   color: #ff6b35;
 }
 
-.top-bar a {
-  color: #ecf0f1;
-  font-weight: 500;
-  transition: color 0.3s;
+.top-bar ul li a {
+  color: red
+  font-size: 1.1rem;
+  padding: 1rem 1.4rem;
+  transition: 0.3s;
 }
 
-.top-bar a:hover {
+.top-bar ul li a:hover {
   color: #ff6b35;
+  text-shadow: 0 0 10px rgba(255,107,53,0.5);
 }
 
-/* =================================
+/* Submenú */
+.dropdown.menu .nested li a {
+  background-color: #34495e;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown.menu .nested li a:hover {
+  background-color: #ff6b35;
+  color: white;
+}
+
+/* ============================================
    HERO SECTION
-================================= */
+============================================ */
 .hero-section {
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600') center/cover;
-  height: 600px;
+  height: 650px;
+  background: linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.55)
+    ),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600')
+    center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
+  color: white;
+  animation: fadeInHero 1.6s ease-in-out;
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
+@keyframes fadeInHero {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .hero-title {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  font-size: 4.2rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  font-size: 1.7rem;
+  margin-bottom: 35px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 
-.hero-section .button {
-  margin: 0 10px;
-  font-weight: bold;
+.white-btn {
+  border: 2px solid white !important;
 }
 
-/* =================================
+.white-btn:hover {
+  background: white !important;
+  color: #ff6b35 !important;
+}
+
+/* ============================================
    CARACTERÍSTICAS
-================================= */
+============================================ */
 .features-section {
-  padding: 80px 0;
+  padding: 90px 0;
   background-color: #f8f9fa;
 }
 
 .feature-card {
-  padding: 40px 20px;
-  text-align: center;
-  transition: transform 0.3s ease;
+  background: white;
+  padding: 45px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 .feature-icon {
   font-size: 5rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .feature-card h3 {
   color: #d35400;
-  margin-bottom: 15px;
   font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
-.feature-card p {
-  color: #666;
-  font-size: 1.1rem;
-}
-
-/* =================================
+/* ============================================
    MENÚ SECTION
-================================= */
+============================================ */
 .menu-section {
-  padding: 80px 0;
-  background-color: #fff;
+  padding: 90px 0;
 }
 
 .menu-card {
-  background-color: #fff;
-  border: 2px solid #e8e8e8;
-  padding: 30px;
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease;
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  padding: 25px;
+  transition: 0.3s;
+  background: white;
 }
 
 .menu-card:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
 }
 
 .menu-category {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-bottom: 20px;
   color: #d35400;
-  border-bottom: 3px solid #ff6b35;
-  padding-bottom: 10px;
-  margin-bottom: 25px;
-  font-size: 1.8rem;
 }
 
-.menu-item {
-  margin-bottom: 25px;
-  padding-bottom: 20px;
+.menu-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
   border-bottom: 1px solid #eee;
 }
 
-.menu-item:last-child {
-  border-bottom: none;
+.menu-list li span:first-child {
+  font-size: 1.2rem;
 }
 
-.item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+.menu-list li span:last-child {
+  color: #ff6b35;
+  font-weight: 700;
 }
 
-.item-header h4 {
-  color: #2c3e50;
-  font-size: 1.3rem;
-  margin: 0;
-}
-
-.price {
-  color: #d35400;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.menu-item p {
-  color: #666;
-  font-style: italic;
-  margin: 0;
-}
-
-/* =================================
+/* ============================================
    ESPECIALIDADES
-================================= */
+============================================ */
 .specialties-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #ff6b35 0%, #d35400 100%);
-  color: white;
-}
-
-.specialties-section .section-title {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #ff6b35, #d35400);
   color: white;
 }
 
 .specialty-card {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.15);
   padding: 40px 20px;
   text-align: center;
-  border-radius: 10px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 12px;
+  transition: transform 0.3s, background 0.3s;
 }
 
 .specialty-card:hover {
+  background: rgba(255,255,255,0.25);
   transform: translateY(-10px);
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.specialty-image {
+.specialty-icon {
   font-size: 5rem;
   margin-bottom: 20px;
 }
 
-.specialty-card h4 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-/* =================================
+/* ============================================
    NOSOTROS
-================================= */
+============================================ */
 .about-section {
-  padding: 80px 0;
-  background-color: #f8f9fa;
+  padding: 90px 0;
+  background: #f8f9fa;
 }
 
-.about-image img {
+.about-img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-.about-section h2 {
-  color: #d35400;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.about-section .lead {
-  font-size: 1.3rem;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.about-list {
-  list-style: none;
-  margin-top: 30px;
-}
-
-.about-list li {
-  padding: 10px 0;
-  font-size: 1.1rem;
-  color: #555;
-}
-
-/* =================================
+/* ============================================
    RESERVAS
-================================= */
+============================================ */
 .reservation-section {
-  padding: 80px 0;
-  background-color: #fff;
+  padding: 90px 0;
 }
 
-.reservation-info {
-  background-color: #f8f9fa;
+.reservation-info,
+.reservation-form {
+  background: #ffffff;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 .reservation-info h3 {
   color: #d35400;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-}
-
-.reservation-info p,
-.reservation-info li {
+  font-size: 1.7rem;
   margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: #555;
-}
-
-.reservation-info ul {
-  list-style: none;
-  padding-left: 20px;
-}
-
-.reservation-form {
-  background-color: #f8f9fa;
-  padding: 30px;
-  border-radius: 10px;
-}
-
-.reservation-form label {
-  color: #2c3e50;
-  font-weight: 600;
-  margin-bottom: 5px;
 }
 
 .reservation-form input,
-.reservation-form select,
 .reservation-form textarea {
   border: 2px solid #ddd;
-  border-radius: 5px;
+  border-radius: 6px;
   padding: 12px;
-  transition: border-color 0.3s;
+  transition: border 0.3s;
 }
 
 .reservation-form input:focus,
-.reservation-form select:focus,
 .reservation-form textarea:focus {
   border-color: #ff6b35;
-  outline: none;
 }
 
-/* =================================
+/* ============================================
    FOOTER
-================================= */
+============================================ */
 .footer {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  padding: 50px 0 20px 0;
-}
-
-.footer h4 {
-  color: #ff6b35;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
+  background: #2c3e50;
+  color: #ddd;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 4px solid #ff6b35;
 }
 
 .footer p {
-  color: #bdc3c7;
-  margin-bottom: 10px;
-}
-
-.footer-links {
-  list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: #bdc3c7;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: #ff6b35;
-}
-
-.social-links {
-  display: flex;
-  flex-direction: column;
-}
-
-.social-icon {
-  color: #bdc3c7;
-  margin-bottom: 10px;
-  transition: color 0.3s;
-}
-
-.social-icon:hover {
-  color: #ff6b35;
-}
-
-.footer-bottom {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #34495e;
-  text-align: center;
-}
-
-.footer-bottom p {
-  color: #95a5a6;
   margin: 0;
+  font-size: 1rem;
 }
 
-/* =================================
-   BOTONES PERSONALIZADOS
-================================= */
-.button.warning {
-  background-color: #ff6b35;
-  color: white;
-  transition: background-color 0.3s;
-}
-
-.button.warning:hover {
-  background-color: #d35400;
-}
-
-.button.hollow {
-  border: 2px solid white;
-  color: white;
-  transition: all 0.3s;
-}
-
-.button.hollow:hover {
-  background-color: white;
-  color: #ff6b35;
-}
-
-/* =================================
+/* ============================================
    RESPONSIVE
-================================= */
-@media screen and (max-width: 640px) {
+============================================ */
+@media (max-width: 640px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.2rem;
   }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .hero-section .button {
-    display: block;
+
+  .white-btn, .warning {
     width: 100%;
-    margin: 10px 0;
+    margin: 8px 0 !important;
   }
+
+  .menu-list li {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.top-bar-container {
+  background: linear-gradient(90deg, #2c3e50, #1a252f);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.top-bar ul li a {
+  color: white !important;
+}
+
+.top-bar ul li a:hover {
+  color: #ff6b35 !important;
 }
